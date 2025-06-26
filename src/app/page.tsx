@@ -4,72 +4,53 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="space-y-20">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-bg.jpg"
-            alt="Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50" />
-        </div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Juan Carlos Aguilera
-          </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            Product Manager | Specialized in Autonomous Vehicle and Mobility
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Link
-              href="/contact"
-              className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              href="/projects"
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
-            >
-              View Projects
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">About Me</h2>
-            <p className="text-gray-600 mb-4">
-              I am a passionate Product Manager with expertise in Autonomous Vehicles and Mobility. 
-              With 6+ years of experience in the Automotive and Technology industries, I specialize in autonomois vehicles, mobility and remote operatios.
-            </p>
-            <p className="text-gray-600 mb-6">
-              My approach combines technical excellence with creative problem-solving, 
-              delivering innovative solutions that make a real impact.
-            </p>
-            <Link
-              href="/experience"
-              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-          <div className="relative h-96">
-            <Image
-              src="/images/profile.jpg"
-              alt="Profile"
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero + About Section Combined */}
+  <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+  <div className="flex-1 flex flex-col items-start justify-center">
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-2 text-gray-900">Juan C. Aguilera</h1>
+    <div className="h-1 w-20 bg-blue-600 rounded mb-6" />
+    <h2 className="text-xl md:text-2xl font-semibold mb-6 text-blue-700">
+      Product Manager
+      <br />
+      <span className="text-base md:text-lg text-gray-500 font-normal">
+      | Autonomous Vehicles &amp; Mobility
+  </span>
+    </h2>
+    <p className="text-lg text-gray-700 mb-4 max-w-lg">
+      Passionate about building innovative mobility solutions. With 6+ years of experience in the automotive and technology industries, I specialize in autonomous vehicles, mobility, and remote operations.
+    </p>
+    <ul className="list-disc list-inside text-gray-500 mb-6 max-w-lg space-y-1">
+      <li>Technical excellence & creative problem-solving</li>
+      <li>Stakeholder management & cross-functional leadership</li>
+      <li>Delivering impactful, user-centered products</li>
+    </ul>
+    <div className="flex gap-4 mt-2">
+      <Link
+        href="/contact"
+        className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+      >
+        Get in Touch
+      </Link>
+      <Link
+        href="/experience"
+        className="border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-colors"
+      >
+        Learn More
+      </Link>
+    </div>
+  </div>
+  <div className="flex-1 flex justify-center">
+    <div className="relative h-100 w-100 max-w-full">
+      <Image
+        src="/images/profile.jpg"
+        alt="Juan Carlos Aguilera Profile"
+        fill
+        className="object-cover rounded-lg shadow-lg"
+        priority
+      />
+    </div>
+  </div>
+</section>
 
       {/* Featured Projects */}
       <section className="bg-gray-50 py-20">
@@ -112,7 +93,7 @@ export default function Home() {
             <div
               key={skill}
               className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
->
+            >
               <div className="text-2xl mb-2">🧠</div>
               <h3 className="font-semibold">{skill}</h3>
             </div>
@@ -124,7 +105,7 @@ export default function Home() {
             <div
               key={skill}
               className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
->
+            >
               <div className="text-2xl mb-2">🔧</div>
               <h3 className="font-semibold">{skill}</h3>
             </div>
