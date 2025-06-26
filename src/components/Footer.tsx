@@ -8,8 +8,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <p className="text-gray-300">
-              Professional engineer with expertise in [Your Specialization]. 
-              Passionate about creating innovative solutions and sharing knowledge.
+              I am a passionate Product Manager with expertise in Autonomous Vehicles and Mobility. With 6+ years of experience in the Automotive and Technology industries, I specialize in autonomois vehicles, mobility and remote operatios.
+              My approach combines technical excellence with creative problem-solving, delivering innovative solutions that make a real impact.
             </p>
           </div>
           

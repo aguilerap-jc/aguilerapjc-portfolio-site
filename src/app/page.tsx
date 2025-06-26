@@ -46,9 +46,8 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <p className="text-gray-600 mb-4">
-              I am a passionate engineer with expertise in [Your Specialization]. 
-              With [X] years of experience in the industry, I specialize in 
-              [specific skills or technologies].
+              I am a passionate Product Manager with expertise in Autonomous Vehicles and Mobility. 
+              With 6+ years of experience in the Automotive and Technology industries, I specialize in autonomois vehicles, mobility and remote operatios.
             </p>
             <p className="text-gray-600 mb-6">
               My approach combines technical excellence with creative problem-solving, 
@@ -107,14 +106,26 @@ export default function Home() {
 
       {/* Skills Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+        <h3 className="text-3xl font-bold text-center mb-12">Soft Skills</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4', 'Skill 5', 'Skill 6', 'Skill 7', 'Skill 8'].map((skill) => (
+          {['Product Management', 'Stakeholder Management', 'Product Strategy', 'Roadmapping'].map((skill) => (
             <div
               key={skill}
               className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <div className="text-4xl mb-4">🔧</div>
+>
+              <div className="text-2xl mb-2">🧠</div>
+              <h3 className="font-semibold">{skill}</h3>
+            </div>
+          ))}
+        </div>
+        <h3 className="text-3xl font-bold text-center mt-16 mb-12">Technical Skills</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {['Remote Operations', 'Artificial Intelligence', 'Automotive', 'Robotics'].map((skill) => (
+            <div
+              key={skill}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+>
+              <div className="text-2xl mb-2">🔧</div>
               <h3 className="font-semibold">{skill}</h3>
             </div>
           ))}
