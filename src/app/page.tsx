@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className="space-y-20">
       {/* Hero + About Section Combined */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+  <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
   <div className="flex-1 flex flex-col items-start justify-center">
-    <h1 className="text-5xl md:text-6xl font-extrabold mb-2 text-gray-900">Juan Carlos Aguilera</h1>
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-2 text-gray-900">Juan C. Aguilera</h1>
     <div className="h-1 w-20 bg-blue-600 rounded mb-6" />
     <h2 className="text-xl md:text-2xl font-semibold mb-6 text-blue-700">
       Product Manager
@@ -40,7 +40,7 @@ export default function Home() {
     </div>
   </div>
   <div className="flex-1 flex justify-center">
-    <div className="relative h-96 w-96 max-w-full">
+    <div className="relative h-100 w-100 max-w-full">
       <Image
         src="/images/profile.jpg"
         alt="Juan Carlos Aguilera Profile"
