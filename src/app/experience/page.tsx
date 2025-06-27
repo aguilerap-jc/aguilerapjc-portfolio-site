@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Head from "next/head";
 import { useState } from 'react';
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Experience() {
   const experiences = [
@@ -291,7 +290,7 @@ export default function Experience() {
                     </div>
                     <div className="relative h-48 w-full flex items-center justify-center md:col-span-1 order-1 md:order-2">
                       <Image
-                        src={exp.image || `${basePath}/images/profile.jpg`}
+                        src={exp.image || "/aguilerapjc-portfolio-site/images/profile.jpg"}
                         alt={exp.company}
                         fill
                         className="object-contain rounded-xl bg-white p-4"

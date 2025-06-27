@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Home() {
   return (
@@ -74,7 +73,7 @@ export default function Home() {
               <div key={project} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src={`${basePath}/images/project-${project}.jpg`}
+                    src={`/aguilerapjc-portfolio-site/images/project-${project}.jpg`}
                     alt={`Project ${project}`}
                     fill
                     className="object-cover"

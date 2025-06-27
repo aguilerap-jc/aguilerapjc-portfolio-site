@@ -1,7 +1,6 @@
 'use client';
 import Head from 'next/head';
 import { useState } from 'react';
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
