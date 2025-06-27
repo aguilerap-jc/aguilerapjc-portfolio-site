@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Head from "next/head";
 import { useState } from 'react';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Experience() {
   const experiences = [
@@ -13,7 +14,7 @@ export default function Experience() {
       period: '2022 - Present',
       description: 'Leading engineering projects and developing innovative solutions.',
       skills: ['Product Management', 'Stakeholder Management', 'Roadmap Planning'],
-      image: '/images/experience/MOIA_Logo.png', 
+      image: '/aguilerapjc-portfolio-site/images/experience/MOIA_Logo.png', 
       details: (
         <div className="space-y-4">
           <div>
@@ -44,7 +45,7 @@ export default function Experience() {
       period: 'March 2020 - Sept 2021',
       description: 'Led a team to develop and integrate autonomy module.',
       skills: ['Stakeholder Management', 'Product Verification & Validation', 'Testing'],
-      image: '/images/experience/jd-logo.avif',
+      image: '/aguilerapjc-portfolio-site/images/experience/jd-logo.avif',
       details: (
         <div className="space-y-4">
           <div>
@@ -68,7 +69,7 @@ export default function Experience() {
       period: 'Jan 2018 - Sept 2021',
       description: 'Ensured product quality for Safety-Relevant Embedded Software.',
       skills: ['Embedded Software', 'Product Verification & Validation', 'Testing'],
-      image: '/images/experience/jd-logo.avif',
+      image: '/aguilerapjc-portfolio-site/images/experience/jd-logo.avif',
       details: (
         <div className="space-y-4">
           <div>
@@ -90,7 +91,7 @@ export default function Experience() {
       period: '2017 - 2018',
       description: 'Working on deep learning and artificial intelligence projects, for process automation.',
       skills: ['Computer Vision', 'Deep Learning', 'Artificial Intelligence'],
-      image: '/images/experience/softtek_logo.png',
+      image: '/aguilerapjc-portfolio-site/images/experience/softtek_logo.png',
       details: (
         <div className="space-y-4">
           <div>
@@ -113,7 +114,7 @@ export default function Experience() {
       school: 'IE Business School',
       period: '2021 - 2022',
       description: 'Specialized in Data Analytics and Digital Transformation.',
-      image: '/images/experience/IE_Business_School_Logo.png'
+      image: '/aguilerapjc-portfolio-site/images/experience/IE_Business_School_Logo.png'
     },
     // Tecnológico de Monterrey - Bachelor
     {
@@ -121,7 +122,7 @@ export default function Experience() {
       school: 'Tecnológico de Monterrey',
       period: '2012 - 2017',
       description: 'Major in Robotics Engineering with a focus on Artifical Intelligence.',
-      image: '/images/experience/Tec-de-Monterrey-logo.webp'
+      image: '/aguilerapjc-portfolio-site/images/experience/Tec-de-Monterrey-logo.webp'
     }
   ];
 
@@ -175,7 +176,7 @@ export default function Experience() {
         <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
         <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
         <meta property="og:description" content="Specialist in autonomous vehicles, mobility, and remote operations." />
-        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image" content={`${basePath}/images/profile.jpg`} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         {/* <link rel="canonical" href="https://yourdomain.com/experience" /> */}
@@ -209,7 +210,7 @@ export default function Experience() {
                   <>
                     <div className="relative h-48 w-full flex items-center justify-center md:col-span-1">
                       <Image
-                        src={exp.image || "/images/hero-bg.png"}
+                        src={exp.image || "/aguilerapjc-portfolio-site/images/hero-bg.png"}
                         alt={exp.company}
                         fill
                         className="object-contain rounded-xl bg-white p-4"
@@ -291,7 +292,7 @@ export default function Experience() {
                     </div>
                     <div className="relative h-48 w-full flex items-center justify-center md:col-span-1 order-1 md:order-2">
                       <Image
-                        src={exp.image || "/images/hero-bg.png"}
+                        src={exp.image || `${basePath}/images/profile.jpg`}
                         alt={exp.company}
                         fill
                         className="object-contain rounded-xl bg-white p-4"

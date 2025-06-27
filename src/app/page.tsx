@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
         <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
         <meta property="og:description" content="Specialist in autonomous vehicles, mobility, and remote operations." />
-        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image" content={`${basePath}/images/profile.jpg`} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         {/* <link rel="canonical" href="https://yourdomain.com/" /> */}
@@ -54,7 +55,7 @@ export default function Home() {
   <div className="flex-1 flex justify-center">
     <div className="relative h-100 w-100 max-w-full">
       <Image
-        src="/images/profile.jpg"
+        src={"/aguilerapjc-portfolio-site/images/profile.jpg"}
         alt="Juan Carlos Aguilera Profile"
         fill
         className="object-cover rounded-lg shadow-lg"
@@ -73,7 +74,7 @@ export default function Home() {
               <div key={project} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src={`/images/project-${project}.jpg`}
+                    src={`${basePath}/images/project-${project}.jpg`}
                     alt={`Project ${project}`}
                     fill
                     className="object-cover"

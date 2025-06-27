@@ -1,6 +1,7 @@
 'use client';
 import Head from 'next/head';
 import { useState } from 'react';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -75,7 +76,7 @@ export default function Contact() {
         <meta name="description" content="Professional experience of Juan C. Aguilera in product management, engineering, and autonomous vehicles." />
         <meta property="og:title" content="Contact | Juan C. Aguilera" />
         <meta property="og:description" content="Contact form of Juan C. Aguilera in product management, engineering, and autonomous vehicles." />
-        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image" content={`${basePath}/images/profile.jpg`} />
         <meta property="og:type" content="website" />
       </Head>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

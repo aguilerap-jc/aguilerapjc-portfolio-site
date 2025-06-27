@@ -10,7 +10,7 @@ export default function Projects() {
       year: '2022-Present',
       description: 'Lead product development for telemetry and incident management systems for the ID Buzz AD. This project focuses on enhancing remote operations and incident response capabilities.',
       technologies: ['AWS', 'Homologation Relevant Software', 'Cloud Technologies', 'Embedded Systems'],
-      image: '/images/projects/MOIA/MOIA_ID_BUZZ_AD.jpg',
+      image: '/aguilerapjc-portfolio-site/images/projects/MOIA/MOIA_ID_BUZZ_AD.jpg',
       features: [
         'Telemetry Information: Enable Fleet Operator to monitor vehicle status and performance in real-time',
         'Incident Management: Provide critical information to Fleet Operator in case of incidents or failures',
@@ -25,7 +25,7 @@ export default function Projects() {
       year: '2019-2021',
       description: 'Led the development of an autonomous mowing control unit for John Deere\'s Fairway Mower.',
       technologies: ['Product Verification & Validation', 'Leadership', 'Advance Engineering', 'Autonomous Vehicles'],
-      image: '/images/projects/John Deere/john-deere-autonomous-mower.jpg',
+      image: '/aguilerapjc-portfolio-site/images/projects/John Deere/john-deere-autonomous-mower.jpg',
       features: [
         'Autonomy Control Unit: Enable control system to operate steering, throttle, and brake for autonomous mowing',
       ]
@@ -37,7 +37,7 @@ export default function Projects() {
       year: '2018-2021',
       description: 'Verification and validation of the JD 6J tractor for Latin America and European Markets. This project involved extensive testing and validation to ensure compliance with regional standards and customer needs.',
       technologies: ['Product Verification & Validation', 'Embedded Systems', 'Automotive Engineering'],
-      image: '/images/projects/John Deere/6150_J.avif',
+      image: '/aguilerapjc-portfolio-site/images/projects/John Deere/6150_J.avif',
       features: [
         'Differential Lock: SiL, HiL, and vehicle testing for Differential Lock systems',
         'Mechanical Front Wheel Drive: SiL, HiL, and vehicle testing for MFWD systems',
@@ -54,7 +54,7 @@ export default function Projects() {
       year: '2024',
       description: 'Designed and developed a personal branding website using Next.js and Tailwind CSS to showcase professional experience and projects.',
       technologies: ['Next.js', 'Tailwind CSS', 'React', 'Vercel'],
-      image: '/images/projects/personal/portfolio.jpg',
+      image: '/aguilerapjc-portfolio-site/images/projects/personal/portfolio.jpg',
       features: [
         'Responsive design for all devices',
         'SEO optimized with structured data',
@@ -68,7 +68,7 @@ export default function Projects() {
       year: '2024',
       description: 'Designed and developed a personal branding website using Next.js and Tailwind CSS to showcase professional experience and projects.',
       technologies: ['Next.js', 'Tailwind CSS', 'React', 'Vercel'],
-      image: '/images/projects/personal/portfolio.jpg',
+      image: '/aguilerapjc-portfolio-site/images/projects/personal/portfolio.jpg',
       features: [
         'Responsive design for all devices',
         'SEO optimized with structured data',
