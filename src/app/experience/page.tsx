@@ -170,7 +170,7 @@ export default function Experience() {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Juan C. Aguilera | Product Manager – Autonomous Vehicles & Mobility</title>
         <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
         <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
@@ -185,97 +185,184 @@ export default function Experience() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 className="text-4xl font-bold text-center mb-12">Professional Experience</h1>
-
-      {/* Work Experience */}
-      <section className="mb-20">
-        <h2 className="text-3xl font-semibold mb-8">Work Experience</h2>
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-white p-6 rounded-lg shadow-md cursor-pointer"
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            >
-              <div className="relative h-48 w-full flex items-center justify-center">
-                <Image
-                  src={exp.image || "/images/hero-bg.png"}
-                  alt={exp.company}
-                  fill
-                  className="object-cover rounded-lg"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className="md:col-span-2 flex flex-col">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-2">{exp.title}</h3>
-                    <p className="text-xl text-gray-600 mb-2">{exp.company}</p>
-                    <p className="text-gray-500 mb-4">{exp.period}</p>
-                  </div>
-                  {/* Chevron Icon */}
-                  <span
-                    className={`transition-transform duration-200 ml-4 text-gray-400 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M6 9l6 6 6-6" />
-                    </svg>
-                  </span>
-                </div>
-                <p className="text-gray-700 mb-4">{exp.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                {openIndex === index && (
-                  <div className="mt-4 text-gray-700 space-y-4">
-                    {exp.details}
-                  </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h1 className="text-4xl font-bold text-center mb-12">Professional Experience</h1>
+        {/* Work Experience */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-semibold mb-8 text-blue-700">Work Experience</h2>
+          <div className="space-y-16">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className={`
+                  grid grid-cols-1 md:grid-cols-3 gap-8 items-center 
+                  p-0 md:p-6 rounded-2xl shadow-md cursor-pointer
+                  transition-transform duration-200 hover:scale-[1.02]
+                  ${index % 2 === 0 ? "bg-gradient-to-r from-blue-50 to-white" : "bg-white"}
+                  border border-gray-100
+                `}
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                
+                {/* Alternate image/text order on even/odd */}
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="relative h-48 w-full flex items-center justify-center md:col-span-1">
+                      <Image
+                        src={exp.image || "/images/hero-bg.png"}
+                        alt={exp.company}
+                        fill
+                        className="object-contain rounded-xl bg-white p-4"
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                    <div className="md:col-span-2 flex flex-col py-6 px-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-1 text-blue-900">{exp.title}</h3>
+                          <p className="text-lg text-blue-700 mb-1">{exp.company}</p>
+                          <p className="text-gray-500 mb-3">{exp.period}</p>
+                        </div>
+                        {/* Chevron Icon */}
+                        <span
+                          className={`transition-transform duration-200 ml-4 text-gray-400 ${
+                            openIndex === index ? "rotate-180" : ""
+                          }`}
+                        >
+                          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </div>
+                      <p className="text-gray-700 mb-4">{exp.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <span
+                            key={skillIndex}
+                            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                      {openIndex === index && (
+                        <div className="mt-4 text-gray-700 space-y-4 border-t border-blue-100 pt-4">
+                          {exp.details}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="md:col-span-2 flex flex-col py-6 px-4 order-2 md:order-1">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-1 text-blue-900">{exp.title}</h3>
+                          <p className="text-lg text-blue-700 mb-1">{exp.company}</p>
+                          <p className="text-gray-500 mb-3">{exp.period}</p>
+                        </div>
+                        {/* Chevron Icon */}
+                        <span
+                          className={`transition-transform duration-200 ml-4 text-gray-400 ${
+                            openIndex === index ? "rotate-180" : ""
+                          }`}
+                        >
+                          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </div>
+                      <p className="text-gray-700 mb-4">{exp.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <span
+                            key={skillIndex}
+                            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                      {openIndex === index && (
+                        <div className="mt-4 text-gray-700 space-y-4 border-t border-blue-100 pt-4">
+                          {exp.details}
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative h-48 w-full flex items-center justify-center md:col-span-1 order-1 md:order-2">
+                      <Image
+                        src={exp.image || "/images/hero-bg.png"}
+                        alt={exp.company}
+                        fill
+                        className="object-contain rounded-xl bg-white p-4"
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                  </>
                 )}
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* Education */}
-      <section>
-        <h2 className="text-3xl font-semibold mb-8">Education</h2>
-        <div className="space-y-12">
-          {education.map((edu, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-white p-6 rounded-lg shadow-md"
-            >
-              <div className="relative h-48 md:h-full flex items-center justify-center">
-                <Image
-                  src={edu.image}
-                  alt={edu.school}
-                  fill
-                  className={`rounded-lg ${(edu.school === "IE Business School" || edu.school === "Tecnológico de Monterrey") ? "object-contain p-6 bg-white" : "object-cover"}`}
-                  style={{ backgroundColor: "#fff" }}
-                />
+        {/* Education */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-8 text-blue-700">Education</h2>
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <div
+                key={index}
+                className={`
+                  grid grid-cols-1 md:grid-cols-3 gap-8 items-center
+                  p-0 md:p-6 rounded-2xl shadow-md
+                  transition-transform duration-200 hover:scale-[1.02]
+                  ${index % 2 === 0 ? "bg-gradient-to-r from-blue-50 to-white" : "bg-white"}
+                  border border-gray-100
+                `}
+              >
+                {/* Alternate image/text order on even/odd */}
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="relative h-48 w-full flex items-center justify-center md:col-span-1">
+                      <Image
+                        src={edu.image}
+                        alt={edu.school}
+                        fill
+                        className={`rounded-lg ${(edu.school === "IE Business School" || edu.school === "Tecnológico de Monterrey") ? "object-contain p-6 bg-white" : "object-cover"}`}
+                        style={{ backgroundColor: "#fff" }}
+                      />
+                    </div>
+                    <div className="md:col-span-2 flex flex-col py-6 px-4">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-900">{edu.degree}</h3>
+                      <p className="text-xl text-blue-700 mb-2">{edu.school}</p>
+                      <p className="text-gray-500 mb-4">{edu.period}</p>
+                      <p className="text-gray-700">{edu.description}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="md:col-span-2 flex flex-col py-6 px-4 order-2 md:order-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-900">{edu.degree}</h3>
+                      <p className="text-xl text-blue-700 mb-2">{edu.school}</p>
+                      <p className="text-gray-500 mb-4">{edu.period}</p>
+                      <p className="text-gray-700">{edu.description}</p>
+                    </div>
+                    <div className="relative h-48 w-full flex items-center justify-center md:col-span-1 order-1 md:order-2">
+                      <Image
+                        src={edu.image}
+                        alt={edu.school}
+                        fill
+                        className={`rounded-lg ${(edu.school === "IE Business School" || edu.school === "Tecnológico de Monterrey") ? "object-contain p-6 bg-white" : "object-cover"}`}
+                        style={{ backgroundColor: "#fff" }}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
-              <div className="md:col-span-2">
-                <h3 className="text-2xl font-semibold mb-2">{edu.degree}</h3>
-                <p className="text-xl text-gray-600 mb-2">{edu.school}</p>
-                <p className="text-gray-500 mb-4">{edu.period}</p>
-                <p className="text-gray-700">{edu.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </>
   );
 }
