@@ -63,7 +63,7 @@ export default function Projects() {
     },
     {
       id: 'other-projetct',
-      title: 'Personal Portfolio Website',
+      title: 'Other project',
       category: 'Web Development',
       year: '2024',
       description: 'Designed and developed a personal branding website using Next.js and Tailwind CSS to showcase professional experience and projects.',
