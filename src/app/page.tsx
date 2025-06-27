@@ -1,8 +1,20 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
+    <>
+    <Head>
+        <title>Juan C. Aguilera | Product Manager – Autonomous Vehicles & Mobility</title>
+        <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
+        <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
+        <meta property="og:description" content="Specialist in autonomous vehicles, mobility, and remote operations." />
+        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        {/* <link rel="canonical" href="https://yourdomain.com/" /> */}
+      </Head>
     <div className="space-y-20">
       {/* Hero + About Section Combined */}
   <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
@@ -113,5 +125,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

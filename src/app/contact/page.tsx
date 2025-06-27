@@ -1,5 +1,5 @@
 'use client';
-
+import Head from 'next/head';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -69,6 +69,15 @@ export default function Contact() {
   };
 
   return (
+    <>
+    <Head>
+        <title>Experience | Juan C. Aguilera</title>
+        <meta name="description" content="Professional experience of Juan C. Aguilera in product management, engineering, and autonomous vehicles." />
+        <meta property="og:title" content="Contact | Juan C. Aguilera" />
+        <meta property="og:description" content="Contact form of Juan C. Aguilera in product management, engineering, and autonomous vehicles." />
+        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:type" content="website" />
+      </Head>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <h1 className="text-4xl font-bold text-center mb-12">Contact Me</h1>
 
@@ -210,5 +219,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }

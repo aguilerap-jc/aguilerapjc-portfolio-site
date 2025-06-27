@@ -1,9 +1,11 @@
 "use client";
 import Image from 'next/image';
+import Head from "next/head";
 import { useState } from 'react';
 
 export default function Experience() {
   const experiences = [
+    // MOIA - Product Manager
     {
       // MOIA - Product Manager
       title: 'Product Manager',
@@ -11,7 +13,7 @@ export default function Experience() {
       period: '2022 - Present',
       description: 'Leading engineering projects and developing innovative solutions.',
       skills: ['Product Management', 'Stakeholder Management', 'Roadmap Planning'],
-      image: '/images/experience/MOIA_Logo.png',
+      image: '/images/experience/MOIA_Logo.png', 
       details: (
         <div className="space-y-4">
           <div>
@@ -34,6 +36,7 @@ export default function Experience() {
         </div>
       )
     },
+    // John Deere - Deliver Lead
     {
       // John Deere - Deliver Lead
       title: 'Deliver Lead',
@@ -57,6 +60,7 @@ export default function Experience() {
         </div>
       )
     },
+    // John Deere - Engineer
     {
       // John Deere - Engineer
       title: 'Embedded Test Engineer',
@@ -79,6 +83,7 @@ export default function Experience() {
         </div>
       )
     },
+    // Softtek - R&D Jr Developer
     {
       title: 'R&D Jr Developer',
       company: 'Softtek',
@@ -102,6 +107,7 @@ export default function Experience() {
   ];
 
   const education = [
+    // IE Business School - MBA
     {
       degree: 'Master in Business Administration',
       school: 'IE Business School',
@@ -109,19 +115,76 @@ export default function Experience() {
       description: 'Specialized in Data Analytics and Digital Transformation.',
       image: '/images/experience/IE_Business_School_Logo.png'
     },
+    // Tecnológico de Monterrey - Bachelor
     {
       degree: 'Bachelor of Science in Engineering',
-      school: 'Technológico de Monterrey',
+      school: 'Tecnológico de Monterrey',
       period: '2012 - 2017',
       description: 'Major in Robotics Engineering with a focus on Artifical Intelligence.',
       image: '/images/experience/Tec-de-Monterrey-logo.webp'
     }
   ];
 
+  // JSON-LD structured data for experiences and education
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Juan C. Aguilera",
+    "jobTitle": "Product Manager",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "MOIA - Volkswagen Group"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "IE Business School",
+        "degree": "Master in Business Administration",
+        "startDate": "2021",
+        "endDate": "2022"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Tecnológico de Monterrey",
+        "degree": "Bachelor of Science in Engineering",
+        "startDate": "2012",
+        "endDate": "2017"
+      }
+    ],
+    "hasOccupation": experiences.map(exp => ({
+      "@type": "Occupation",
+      "name": exp.title,
+      "description": exp.description,
+      "skills": exp.skills.join(", "),
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": exp.company
+      },
+      "startDate": exp.period.split('-')[0].trim(),
+      "endDate": exp.period.includes('-') ? exp.period.split('-')[1].trim() : undefined
+    }))
+  };
+
   // This state keeps track of which experience is expanded (null means none)
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
+    <>
+    <Head>
+        <title>Juan C. Aguilera | Product Manager – Autonomous Vehicles & Mobility</title>
+        <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
+        <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
+        <meta property="og:description" content="Specialist in autonomous vehicles, mobility, and remote operations." />
+        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        {/* <link rel="canonical" href="https://yourdomain.com/experience" /> */}
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </Head>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <h1 className="text-4xl font-bold text-center mb-12">Professional Experience</h1>
 
@@ -137,7 +200,7 @@ export default function Experience() {
             >
               <div className="relative h-48 w-full flex items-center justify-center">
                 <Image
-                  src={exp.image}
+                  src={exp.image || "/images/hero-bg.png"}
                   alt={exp.company}
                   fill
                   className="object-cover rounded-lg"
@@ -198,7 +261,7 @@ export default function Experience() {
                   src={edu.image}
                   alt={edu.school}
                   fill
-                  className={`rounded-lg ${(edu.school === "IE Business School" || edu.school === "Technológico de Monterrey") ? "object-contain p-6 bg-white" : "object-cover"}`}
+                  className={`rounded-lg ${(edu.school === "IE Business School" || edu.school === "Tecnológico de Monterrey") ? "object-contain p-6 bg-white" : "object-cover"}`}
                   style={{ backgroundColor: "#fff" }}
                 />
               </div>
@@ -213,5 +276,6 @@ export default function Experience() {
         </div>
       </section>
     </div>
+    </>
   );
 }
