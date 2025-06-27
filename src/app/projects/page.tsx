@@ -4,7 +4,7 @@ import Head from 'next/head';
 export default function Projects() {
   const projects = [
     {
-      id: 'ID-Buzz-AD',
+      id: 'ID-Buzz-AD ',
       title: 'ID Buzz AD - VW First Production Autonomous Vehicle',
       category: 'Product Management',
       year: '2022-Present',
