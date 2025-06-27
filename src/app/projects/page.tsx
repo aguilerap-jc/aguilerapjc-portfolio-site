@@ -54,21 +54,7 @@ export default function Projects() {
       year: '2024',
       description: 'Designed and developed a personal branding website using Next.js and Tailwind CSS to showcase professional experience and projects.',
       technologies: ['Next.js', 'Tailwind CSS', 'React', 'Vercel'],
-      image: '/aguilerapjc-portfolio-site/images/projects/personal/portfolio.jpg',
-      features: [
-        'Responsive design for all devices',
-        'SEO optimized with structured data',
-        'Dynamic project and experience sections',
-      ]
-    },
-    {
-      id: 'other-projetct',
-      title: 'Other project',
-      category: 'Web Development',
-      year: '2024',
-      description: 'Designed and developed a personal branding website using Next.js and Tailwind CSS to showcase professional experience and projects.',
-      technologies: ['Next.js', 'Tailwind CSS', 'React', 'Vercel'],
-      image: '/aguilerapjc-portfolio-site/images/projects/personal/portfolio.jpg',
+      image: '/aguilerapjc-portfolio-site/images/projects/personal/webpage_ss.jpg',
       features: [
         'Responsive design for all devices',
         'SEO optimized with structured data',
@@ -84,7 +70,7 @@ export default function Projects() {
         <meta name="description" content="Professional and personal projects of Juan C. Aguilera in product management, engineering, and technology." />
         <meta property="og:title" content="Projects | Juan C. Aguilera" />
         <meta property="og:description" content="Professional and personal projects of Juan C. Aguilera in product management, engineering, and technology." />
-        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image" content="/aguilerapjc-portfolio-site/images/profile.jpg" />
         <meta property="og:type" content="website" />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -125,22 +111,12 @@ export default function Projects() {
                 tabIndex={0}
               >
                 <div className="relative h-64">
-                  {project.id === 'personal-portfolio' ? (
-                    <iframe
-                      // To add domain once I have deployed the portfolio
-                      src="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/"
-                      title="Personal Portfolio Live Preview"
-                      className="w-full h-full rounded-t-2xl border-0"
-                      style={{ background: 'white' }}
-                    />
-                  ) : (
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
                   <span className="absolute top-4 right-4 bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold shadow">
                     {project.year}
                   </span>
