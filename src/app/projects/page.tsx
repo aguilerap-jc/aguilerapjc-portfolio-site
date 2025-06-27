@@ -70,8 +70,9 @@ export default function Projects() {
         <meta name="description" content="Professional and personal projects of Juan C. Aguilera in product management, engineering, and technology." />
         <meta property="og:title" content="Projects | Juan C. Aguilera" />
         <meta property="og:description" content="Professional and personal projects of Juan C. Aguilera in product management, engineering, and technology." />
-        <meta property="og:image" content="/aguilerapjc-portfolio-site/images/profile.jpg" />
+        <meta property="og:image" content="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/images/profile.jpg" />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/projects" />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Main Projects Header */}

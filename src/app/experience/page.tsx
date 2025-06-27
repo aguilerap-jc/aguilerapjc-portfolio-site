@@ -176,11 +176,10 @@ export default function Experience() {
         <meta name="description" content="Juan C. Aguilera is a Product Manager specializing in autonomous vehicles, mobility, and remote operations. Explore his projects, skills, and experience." />
         <meta property="og:title" content="Juan C. Aguilera | Product Manager" />
         <meta property="og:description" content="Specialist in autonomous vehicles, mobility, and remote operations." />
-        <meta property="og:image" content={`${basePath}/images/profile.jpg`} />
+        <meta property="og:image" content="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/images/profile.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        {/* <link rel="canonical" href="https://yourdomain.com/experience" /> */}
-        {/* JSON-LD Structured Data */}
+        <link rel="canonical" href="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/experience" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
