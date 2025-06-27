@@ -7,5 +7,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
+module.exports = {
+  images: {
+    unoptimized: true,
+  },
+};
 module.exports = nextConfig;
 //export default nextConfig;
