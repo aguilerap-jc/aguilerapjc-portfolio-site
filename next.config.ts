@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  basePath: "/aguilerapjc-portfolio-site",
-  output: "export",  // <=== enables static exports
-  reactStrictMode: true,
-};
+const repo = "aguilerapjc-portfolio-site";
 
-module.exports = {
+const nextConfig: NextConfig = {
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
+  output: "export", // enables static exports
+  reactStrictMode: true,
   images: {
     unoptimized: true,
   },
 };
+
 module.exports = nextConfig;
-//export default nextConfig;
