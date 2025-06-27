@@ -128,7 +128,7 @@ export default function Projects() {
                   {project.id === 'personal-portfolio' ? (
                     <iframe
                       // To add domain once I have deployed the portfolio
-                      src="/"
+                      src="https://aguilerap-jc.github.io/aguilerapjc-portfolio-site/"
                       title="Personal Portfolio Live Preview"
                       className="w-full h-full rounded-t-2xl border-0"
                       style={{ background: 'white' }}
