@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { prof_projects } from '@/data/projects';
 
 export default function Home() {
   return (
@@ -69,23 +70,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((project) => (
-              <div key={project} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {prof_projects.slice(0, 3).map((project) => (
+              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src={`/aguilerapjc-portfolio-site/images/project-${project}.jpg`}
-                    alt={`Project ${project}`}
+                    src={project.image}
+                    alt={project.title}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Project Title {project}</h3>
-                  <p className="text-gray-600 mb-4">
-                    Brief description of the project and its impact.
-                  </p>
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
                   <Link
-                    href={`/projects#project-${project}`}
+                    href={`/projects#${project.id}`}
                     className="text-blue-600 hover:text-blue-800 font-semibold"
                   >
                     View Details →

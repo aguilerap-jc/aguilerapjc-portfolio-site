@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import { prof_projects,personal_Projects } from '@/data/projects';
 
 export default function Projects() {
+  /*
   const projects = [
     {
       id: 'ID-Buzz-AD ',
@@ -45,7 +47,7 @@ export default function Projects() {
       ]
     }
   ];
-
+  */
   const personalProjects = [
     {
       id: 'personal-portfolio',
@@ -104,7 +106,7 @@ export default function Projects() {
             Professional Projects
           </h2>
           <div className="grid gap-16 md:grid-cols-2">
-            {projects.map((project) => (
+            {prof_projects.map((project) => (
               <section
                 key={project.id}
                 id={project.id}
@@ -172,7 +174,7 @@ export default function Projects() {
             Personal Projects
           </h2>
           <div className="grid gap-16 md:grid-cols-2">
-            {personalProjects.map((project) => (
+            {personal_Projects.map((project) => (
               <section
                 key={project.id}
                 id={project.id}
