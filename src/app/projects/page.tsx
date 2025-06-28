@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
-import { prof_projects,personal_Projects } from '@/data/projects';
-
+import { prof_projects, personal_Projects } from '@/data/projects';
 
 export default function Projects() {
   return (
@@ -62,6 +61,27 @@ export default function Projects() {
                   <span className="absolute top-4 right-4 bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold shadow">
                     {project.year}
                   </span>
+                  {/* Image credit section at the bottom with more transparency */}
+                  {project.credit && (
+                    <div
+                      className="absolute left-0 bottom-0 w-full bg-white bg-opacity-60 text-[10px] px-2 py-1 rounded-b-lg flex items-center justify-center italic font-light truncate"
+                      style={{ pointerEvents: 'auto', lineHeight: 1.2 }}
+                      title={`Photo by ${project.credit.author}${project.credit.platform ? ` on ${project.credit.platform}` : ''}${project.credit.license ? ` (${project.credit.license})` : ''}`}
+                    >
+                      Photo by{' '}
+                      <a
+                        href={project.credit.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline ml-1"
+                        tabIndex={-1}
+                      >
+                        {project.credit.author}
+                      </a>
+                      {project.credit.platform && <> , {project.credit.platform}</>}
+                      {project.credit.license && <> ({project.credit.license})</>}
+                    </div>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-2">{project.title}</h3>
@@ -130,6 +150,27 @@ export default function Projects() {
                   <span className="absolute top-4 right-4 bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold shadow">
                     {project.year}
                   </span>
+                  {/* Image credit section at the bottom with more transparency */}
+                  {project.credit && (
+                    <div
+                      className="absolute left-0 bottom-0 w-full bg-white bg-opacity-60 text-[10px] px-2 py-1 rounded-b-lg flex items-center justify-center italic font-light truncate"
+                      style={{ pointerEvents: 'auto', lineHeight: 1.2 }}
+                      title={`Photo by ${project.credit.author}${project.credit.platform ? ` on ${project.credit.platform}` : ''}${project.credit.license ? ` (${project.credit.license})` : ''}`}
+                    >
+                      Photo by{' '}
+                      <a
+                        href={project.credit.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline ml-1"
+                        tabIndex={-1}
+                      >
+                        {project.credit.author}
+                      </a>
+                      {project.credit.platform && <> {project.credit.platform}</>}
+                      {project.credit.license && <> ({project.credit.license})</>}
+                    </div>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-2">{project.title}</h3>

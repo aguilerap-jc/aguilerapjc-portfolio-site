@@ -79,6 +79,27 @@ export default function Home() {
                     fill
                     className="object-cover"
                   />
+                  {/* Image credit section at the bottom with transparency */}
+                  {project.credit && (
+                    <div
+                      className="absolute left-0 bottom-0 w-full bg-white bg-opacity-60 text-[10px] px-2 py-1 rounded-b-lg flex items-center justify-center italic font-light truncate"
+                      style={{ pointerEvents: 'auto', lineHeight: 1.2 }}
+                      title={`Photo by ${project.credit.author}${project.credit.platform ? ` ${project.credit.platform}` : ''}${project.credit.license ? ` (${project.credit.license})` : ''}`}
+                    >
+                      Photo by{' '}
+                      <a
+                        href={project.credit.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline ml-1"
+                        tabIndex={-1}
+                      >
+                        {project.credit.author}
+                      </a>
+                      {project.credit.platform && <span>&nbsp;{project.credit.platform}</span>}
+                      {project.credit.license && <> ({project.credit.license})</>}
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
