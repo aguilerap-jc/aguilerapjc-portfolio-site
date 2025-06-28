@@ -1,5 +1,3 @@
-import { platform } from "os";
-
 export const prof_projects = [
     {
       id: 'ID-Buzz-AD ',
