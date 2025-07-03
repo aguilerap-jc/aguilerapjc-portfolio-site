@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 import { prof_projects } from '@/data/projects';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default function Home() {
   return (
+    <ErrorBoundary>
     <>
     <Head>
   <title>Juan C. Aguilera | Product Manager – Autonomous Vehicles & Mobility</title>
@@ -147,5 +149,6 @@ export default function Home() {
       </section>
     </div>
     </>
+    </ErrorBoundary>
   );
 }

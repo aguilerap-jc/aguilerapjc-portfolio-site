@@ -20,10 +20,33 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: null, message: '' });
+
+    // Custom validation
+    const newErrors = {
+      name: formData.name ? '' : 'Please enter your name',
+      email: formData.email ? '' : 'Please enter your email',
+      subject: formData.subject ? '' : 'Please enter a subject',
+      message: formData.message ? '' : 'Please enter a message'
+    };
+
+    setErrors(newErrors);
+
+    // If any errors, stop submission
+    if (Object.values(newErrors).some(Boolean)) {
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -112,6 +135,7 @@ export default function Contact() {
                 required
                 disabled={isSubmitting}
               />
+              {errors.name && <p>{errors.name}</p>}
             </div>
 
             <div>
