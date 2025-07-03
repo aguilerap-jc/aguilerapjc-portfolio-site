@@ -10,7 +10,7 @@ describe('ErrorBoundary', () => {
   const originalError = console.error;
   beforeAll(() => {
     // Suppress React error boundary warnings in test output
-    console.error = (...args: any[]) => {
+    console.error = (...args: unknown[]) => {
       if (
         typeof args[0] === 'string' &&
         args[0].includes('The above error occurred in the')
