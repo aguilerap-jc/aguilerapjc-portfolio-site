@@ -1,6 +1,6 @@
 'use client';
 import Head from 'next/head';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -199,6 +199,7 @@ export default function Contact() {
             <div className="flex space-x-4">
               <a 
                 href="https://www.linkedin.com/in/aguilerapjc" 
+                aria-label="LinkedIn"
                 className="text-gray-600 hover:text-blue-600"
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -210,6 +211,7 @@ export default function Contact() {
               </a>
               <a 
                 href="https://github.com/aguilerap-jc" 
+                aria-label="GitHub"
                 className="text-gray-600 hover:text-blue-600"
                 target="_blank" 
                 rel="noopener noreferrer"
