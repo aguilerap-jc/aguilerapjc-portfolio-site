@@ -9,5 +9,8 @@ module.exports = {
     'ts-jest': {
       tsconfig: './tsconfig.test.json'
     }
+  },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
   }
 };

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import React from 'react';
 import { prof_projects, personal_Projects } from '@/data/projects';
 
 export default function Projects() {

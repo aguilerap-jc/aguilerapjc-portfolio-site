@@ -15,7 +15,6 @@ describe('Contact Page', () => {
   it('shows error if required fields are empty on submit', () => {
     render(<Contact />);
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
-    // You can check for error messages or validation here
   });
 
   it('renders LinkedIn and GitHub links', () => {
