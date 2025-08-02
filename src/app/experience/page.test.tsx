@@ -12,10 +12,10 @@ describe('Experience Page', () => {
 
   it('renders all experience titles', () => {
     render(<Experience />);
-    expect(screen.getByText(/Product Manager/i)).toBeInTheDocument();
-    expect(screen.getByText(/Product Manager - Deliver Lead/i)).toBeInTheDocument();
-    expect(screen.getByText(/Embedded Test Engineer/i)).toBeInTheDocument();
-    expect(screen.getByText(/R&D Jr Developer/i)).toBeInTheDocument();
+    expect(screen.getByText('Product Manager')).toBeInTheDocument();
+    expect(screen.getByText('Product Manager - Deliver Lead')).toBeInTheDocument();
+    expect(screen.getByText('Embedded Test Engineer')).toBeInTheDocument();
+    expect(screen.getByText('R&D Jr Developer')).toBeInTheDocument();
   });
 
   it('renders all education degrees', () => {
