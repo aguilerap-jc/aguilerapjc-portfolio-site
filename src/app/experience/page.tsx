@@ -36,10 +36,10 @@ export default function Experience() {
         </div>
       )
     },
-    // John Deere - Deliver Lead
+    // John Deere - Product Manager - Deliver Lead
     {
-      // John Deere - Deliver Lead
-      title: 'Deliver Lead',
+      // John Deere - Product Manager - Deliver Lead
+      title: 'Product Manager - Deliver Lead',
       company: 'John Deere',
       period: 'March 2020 - Sept 2021',
       description: 'Led a team to develop and integrate autonomy module.',
