@@ -30,6 +30,9 @@ export default function Navbar() {
               <Link href="/projects" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                 Projects
               </Link>
+              <Link href="/blog" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                Blog
+              </Link>
               <Link href="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </Link>
@@ -69,6 +72,9 @@ export default function Navbar() {
             </Link>
             <Link href="/projects" className="block text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">
               Projects
+            </Link>
+            <Link href="/blog" className="block text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">
+              Blog
             </Link>
             <Link href="/contact" className="block text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium">
               Contact
