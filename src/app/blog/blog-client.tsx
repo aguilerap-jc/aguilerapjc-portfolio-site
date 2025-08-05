@@ -71,16 +71,16 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
       </section>
 
       {/* Search and Filter Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="bg-gradient-to-b from-gray-50 to-gray-100/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Section Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">Find Your Next Read</h2>
             <p className="text-gray-600">Search through our collection of product management insights</p>
           </div>
 
           {/* Search and Filters Container */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-8">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Search */}
               <div className="lg:col-span-2">
@@ -158,7 +158,7 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
 
           {/* Active Filters */}
           {(searchTerm || selectedCategory !== 'All' || selectedTag !== 'All') && (
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <span className="text-sm text-gray-500 font-medium">Active filters:</span>
               {searchTerm && (
                 <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm bg-blue-100 text-blue-800 border border-blue-200">
@@ -208,7 +208,7 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
       </section>
 
       {/* Articles Grid */}
-      <section className="py-16">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
