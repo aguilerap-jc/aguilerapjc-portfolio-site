@@ -36,7 +36,7 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-white border-b">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -71,98 +71,126 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
       </section>
 
       {/* Search and Filter Section */}
-      <section className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Search */}
-            <div className="md:col-span-2">
-              <label htmlFor="search" className="sr-only">Search articles</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-                  </svg>
+      <section className="bg-gradient-to-br from-gray-50 to-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Section Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2">Find Your Next Read</h2>
+            <p className="text-gray-600">Search through our collection of product management insights</p>
+          </div>
+
+          {/* Search and Filters Container */}
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              {/* Search */}
+              <div className="lg:col-span-2">
+                <label htmlFor="search" className="block text-sm font-semibold text-gray-800 mb-3">
+                  Search Articles
+                </label>
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    id="search"
+                    placeholder="Search by title, content, or tags..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="block w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                  />
                 </div>
-                <input
-                  type="text"
-                  id="search"
-                  placeholder="Search articles, topics, or keywords..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
               </div>
-            </div>
 
-            {/* Category Filter */}
-            <div>
-              <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
-                Category
-              </label>
-              <select
-                id="category"
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="All">All Categories</option>
-                {categories.map(category => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
-            </div>
+              {/* Category Filter */}
+              <div>
+                <label htmlFor="category" className="block text-sm font-semibold text-gray-800 mb-3">
+                  Category
+                </label>
+                <div className="relative">
+                  <select
+                    id="category"
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="block w-full px-4 py-4 border border-gray-200 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 appearance-none cursor-pointer"
+                  >
+                    <option value="All">All Categories</option>
+                    {categories.map(category => (
+                      <option key={category} value={category}>{category}</option>
+                    ))}
+                  </select>
+                  <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
 
-            {/* Tag Filter */}
-            <div>
-              <label htmlFor="tag" className="block text-sm font-medium text-gray-700 mb-2">
-                Topic
-              </label>
-              <select
-                id="tag"
-                value={selectedTag}
-                onChange={(e) => setSelectedTag(e.target.value)}
-                className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="All">All Topics</option>
-                {tags.map(tag => (
-                  <option key={tag} value={tag}>{tag}</option>
-                ))}
-              </select>
+              {/* Tag Filter */}
+              <div>
+                <label htmlFor="tag" className="block text-sm font-semibold text-gray-800 mb-3">
+                  Topic
+                </label>
+                <div className="relative">
+                  <select
+                    id="tag"
+                    value={selectedTag}
+                    onChange={(e) => setSelectedTag(e.target.value)}
+                    className="block w-full px-4 py-4 border border-gray-200 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 appearance-none cursor-pointer"
+                  >
+                    <option value="All">All Topics</option>
+                    {tags.map(tag => (
+                      <option key={tag} value={tag}>{tag}</option>
+                    ))}
+                  </select>
+                  <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Active Filters */}
           {(searchTerm || selectedCategory !== 'All' || selectedTag !== 'All') && (
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="text-sm text-gray-500">Active filters:</span>
+              <span className="text-sm text-gray-500 font-medium">Active filters:</span>
               {searchTerm && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm bg-blue-100 text-blue-800 border border-blue-200">
                   Search: &quot;{searchTerm}&quot;
                   <button
                     onClick={() => setSearchTerm('')}
-                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:bg-blue-200 hover:text-blue-600"
+                    className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-blue-500 hover:bg-blue-200 hover:text-blue-700 transition-colors"
+                    aria-label="Remove search filter"
                   >
                     ×
                   </button>
                 </span>
               )}
               {selectedCategory !== 'All' && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm bg-green-100 text-green-800 border border-green-200">
                   Category: {selectedCategory}
                   <button
                     onClick={() => setSelectedCategory('All')}
-                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-green-400 hover:bg-green-200 hover:text-green-600"
+                    className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-green-500 hover:bg-green-200 hover:text-green-700 transition-colors"
+                    aria-label="Remove category filter"
                   >
                     ×
                   </button>
                 </span>
               )}
               {selectedTag !== 'All' && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-800">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm bg-purple-100 text-purple-800 border border-purple-200">
                   Topic: {selectedTag}
                   <button
                     onClick={() => setSelectedTag('All')}
-                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-purple-400 hover:bg-purple-200 hover:text-purple-600"
+                    className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-purple-500 hover:bg-purple-200 hover:text-purple-700 transition-colors"
+                    aria-label="Remove topic filter"
                   >
                     ×
                   </button>
@@ -170,7 +198,7 @@ export default function BlogClient({ blogPosts, categories, tags }: BlogClientPr
               )}
               <button
                 onClick={clearFilters}
-                className="text-sm text-gray-500 hover:text-gray-700 underline"
+                className="text-sm text-gray-500 hover:text-gray-700 underline decoration-dotted underline-offset-4 font-medium transition-colors"
               >
                 Clear all filters
               </button>
