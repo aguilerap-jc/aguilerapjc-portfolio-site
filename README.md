@@ -1,112 +1,51 @@
 # Personal Branding Website
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A modern, responsive personal branding website showcasing product management expertise, built with Next.js and featuring a dynamic blog system, project portfolio, and professional timeline.
 
----
+> 📖 **[Complete Technical Documentation →](./docs/)** | **[Adding Blog Posts →](./docs/blog/adding-new-posts.md)**
 
-## Getting Started
+## ✨ Features
 
-### 1. **Install dependencies**
+- **🔍 Dynamic Blog System** - Search, filter by category/tags, markdown-based content
+- **💼 Project Showcase** - Detailed case studies and portfolio pieces  
+- **📈 Professional Timeline** - Experience and career progression
+- **📱 Responsive Design** - Optimized for desktop, tablet, and mobile
+- **⚡ Performance Optimized** - Fast loading with Next.js and Turbopack
+- **🎨 Modern UI/UX** - Clean design with Tailwind CSS
+
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
 npm install
-```
 
----
-
-### 2. **Run the development server**
-
-By default, this project uses [Turbopack](https://turbo.build/pack) for fast development:
-
-```bash
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
----
+## 🛠️ Tech Stack
 
-### 3. **Build and start for production**
+- **Next.js 14** (App Router) with Turbopack
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Markdown** for blog content
+- **Jest + React Testing Library** for testing
 
-```bash
-npm run build
-npm start
-```
+## 📚 Documentation
 
----
+| Topic | Link |
+|-------|------|
+| **Content Management** | [Adding Blog Posts](./docs/blog/adding-new-posts.md) |
+| **Architecture** | [System Structure](./docs/blog/structure.md) |
+| **Development** | [Technical Setup](./docs/development/README.md) |
+| **Guidelines** | [Coding Standards](./docs/development/guidelines.md) |
 
-### 4. **Lint your code**
+## 🚀 Deployment
 
-```bash
-npm run lint
-```
+Deploy instantly on [Vercel](https://vercel.com/new) or see [deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
 
----
+## 📄 License
 
-### 5. **Run tests**
-
-This project uses **Jest** and **React Testing Library** for unit and integration tests.
-
-```bash
-npm test
-```
-
-#### **Test setup details:**
-- Test files use `.test.tsx` or `.test.ts` extensions.
-- Jest is configured in [`jest.config.js`](jest.config.js).
-- Babel is used for transforming test files only, with config in [`babel.jest.config.js`](babel.jest.config.js).
-- Test environment is set to `jsdom`.
-- Custom matchers from `@testing-library/jest-dom` are loaded via [`jest.setup.js`](jest.setup.js).
-
----
-
-### 6. **Project structure**
-
-```
-personal-branding/
-├── src/
-│   ├── app/
-│   ├── components/
-│   └── data/
-├── public/
-│   └── images/
-├── jest.config.js
-├── babel.jest.config.js
-├── jest.setup.js
-├── tsconfig.json
-├── package.json
-└── README.md
-```
-
----
-
-### 7. **Testing Library & Babel for Jest**
-
-- **Babel is only used for Jest tests.**  
-  The main app uses Next.js’s default SWC/Turbopack compiler.
-- If you need to update Babel settings for tests, edit [`babel.jest.config.js`](babel.jest.config.js).
-
----
-
-### 8. **Troubleshooting**
-
-- If you see errors about Babel and Turbopack, ensure you do **not** have a root-level `.babelrc` or `babel.config.js`.  
-  Only `babel.jest.config.js` should be present for tests.
-- If `next` is not found, run `npm install` to install all dependencies.
-
----
-
-## Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro/)
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-
----
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License - feel free to use this as a template for your own personal branding site!
