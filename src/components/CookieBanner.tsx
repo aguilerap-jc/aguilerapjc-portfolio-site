@@ -32,9 +32,19 @@ export function CookieBanner() {
     
     // Initialize GA with consent
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'granted'
-      })
+      try {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        })
+        
+        if (process.env.NODE_ENV === 'development') {
+          console.log('GA: Analytics consent granted by user')
+        }
+      } catch (error) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('GA: Error updating consent:', error)
+        }
+      }
     }
   }
 
@@ -44,9 +54,19 @@ export function CookieBanner() {
     
     // Ensure GA remains disabled
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'denied'
-      })
+      try {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'denied'
+        })
+        
+        if (process.env.NODE_ENV === 'development') {
+          console.log('GA: Analytics consent declined by user')
+        }
+      } catch (error) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('GA: Error updating consent:', error)
+        }
+      }
     }
   }
 

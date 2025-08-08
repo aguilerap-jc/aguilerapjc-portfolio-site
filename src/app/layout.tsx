@@ -31,6 +31,9 @@ export default function RootLayout({
         {/* GDPR Compliant Analytics */}
         <PrivacyCompliantGA />
         {process.env.NEXT_PUBLIC_GA_ID && (
+          process.env.NODE_ENV === 'production' || 
+          process.env.NEXT_PUBLIC_ENABLE_GA_DEV === 'true'
+        ) && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
         
