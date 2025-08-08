@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.6",
     "@types/nodemailer": "^6.4.17",
     "gray-matter": "^4.0.3",
     "next": "15.3.0",
