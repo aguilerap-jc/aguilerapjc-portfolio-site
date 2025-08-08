@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { CookieBanner } from "@/components/CookieBanner";
+import { PrivacyCompliantGA } from "@/components/PrivacyCompliantGA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +27,15 @@ export default function RootLayout({
           <main className="flex-grow pt-16">{children}</main>
           <Footer />
         </div>
+        
+        {/* GDPR Compliant Analytics */}
+        <PrivacyCompliantGA />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        
+        {/* Cookie Consent Banner */}
+        <CookieBanner />
       </body>
     </html>
   );

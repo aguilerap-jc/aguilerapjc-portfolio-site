@@ -69,9 +69,17 @@ export default function Footer() {
         </div>
         
         <div className="mt-8 border-t border-gray-700 pt-8">
-          <p className="text-center text-gray-300">
-            © {new Date().getFullYear()} Juan Carlos Aguilera. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6">
+            <p className="text-center text-gray-300">
+              © {new Date().getFullYear()} Juan Carlos Aguilera. All rights reserved.
+            </p>
+            <Link 
+              href="/privacy" 
+              className="text-gray-400 hover:text-gray-300 text-sm underline"
+            >
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
