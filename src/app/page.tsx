@@ -353,17 +353,23 @@ export default async function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Google Project Management Certificate */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://www.credly.com/badges/d7fe42c6-982a-4416-99d3-de1548cb7819" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-blue-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  GCC
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/GCC_badge_PGM.png"
+                    alt="Google Career Certificate"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-slate-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -385,17 +391,23 @@ export default async function Home() {
             </div>
 
             {/* SAFe Product Owner/Product Manager */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://www.credly.com/badges/505d3b75-cd9c-48f9-8b1f-5fe0b56b1309" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-green-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  SAFe
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/safe_popm.png"
+                    alt="SAFe Product Owner Product Manager"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-green-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -417,17 +429,23 @@ export default async function Home() {
             </div>
 
             {/* AWS Solutions Architect */}
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://www.credly.com/badges/b92b5a26-84c4-421d-893c-fd23bcdcf6aa" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-orange-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  AWS
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/AWS-Certified-Solutions-Architect-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png"
+                    alt="AWS Certified Solutions Architect Associate"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-orange-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-gray-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -449,17 +467,23 @@ export default async function Home() {
             </div>
 
             {/* ISTQB Test Management */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://atsqa.org/certified-testers/profile/8bdb8b76f83f4bf38e519b9663ac716e" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-purple-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  ISTQB
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/ISTQB_CTAL_TM.png"
+                    alt="ISTQB Certified Tester Advanced Level Test Management"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-purple-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-slate-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -481,17 +505,23 @@ export default async function Home() {
             </div>
 
             {/* University of Toronto Self-Driving Cars */}
-            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 border border-red-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://www.coursera.org/account/accomplishments/specialization/68TFF6XMWJAC" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-red-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  UoT
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/UofToronto.webp"
+                    alt="University of Toronto"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-red-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -513,17 +543,23 @@ export default async function Home() {
             </div>
 
             {/* University of Virginia Digital Product Management */}
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border border-indigo-200/50 hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-300 group">
               <div className="flex items-start justify-between mb-4">
                 <a 
                   href="https://www.coursera.org/account/accomplishments/specialization/A9VKMLNNEDU7" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-indigo-700 transition-colors"
+                  className="w-16 h-16 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-2 hover:shadow-md transition-shadow"
                 >
-                  UVA
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/UnivofVirginia.jpg"
+                    alt="University of Virginia"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </a>
-                <div className="text-indigo-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-gray-600 opacity-50 group-hover:opacity-100 transition-opacity">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
