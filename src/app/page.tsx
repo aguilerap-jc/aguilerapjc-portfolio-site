@@ -71,6 +71,154 @@ export default async function Home() {
   </div>
 </section>
 
+      {/* Certification Credentials Bar - GitLab Style */}
+      <div className="bg-gray-50 border-t border-b border-gray-200 py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h4 className="text-sm font-medium text-gray-600 mb-4 sm:mb-6 tracking-wide uppercase">
+              Certified by
+            </h4>
+            
+            {/* Mobile: Grid Layout, Desktop: Row Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+              
+              {/* Google Project Management Certificate */}
+              <a 
+                href="https://www.credly.com/badges/d7fe42c6-982a-4416-99d3-de1548cb7819" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/GCC_badge_PGM.png"
+                    alt="Google Career Certificate"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">Google</div>
+                  <div className="text-gray-500 text-xs">Project Management</div>
+                </div>
+              </a>
+
+              {/* SAFe Product Owner/Product Manager */}
+              <a 
+                href="https://www.credly.com/badges/505d3b75-cd9c-48f9-8b1f-5fe0b56b1309" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/safe_popm.png"
+                    alt="SAFe Product Owner Product Manager"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">Scaled Agile</div>
+                  <div className="text-gray-500 text-xs">SAFe® 6 POPM</div>
+                </div>
+              </a>
+
+              {/* AWS Solutions Architect */}
+              <a 
+                href="https://www.credly.com/badges/b92b5a26-84c4-421d-893c-fd23bcdcf6aa" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/AWS-Certified-Solutions-Architect-Associate_badge.3419559c682629072f1eb968d59dea0741772c0f.png"
+                    alt="AWS Certified Solutions Architect Associate"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">Amazon Web Services</div>
+                  <div className="text-gray-500 text-xs">Solutions Architect</div>
+                </div>
+              </a>
+              
+              {/* ISTQB Test Management */}
+              <a 
+                href="https://atsqa.org/certified-testers/profile/8bdb8b76f83f4bf38e519b9663ac716e" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/ISTQB_CTAL_TM.png"
+                    alt="ISTQB Certified Tester Advanced Level Test Management"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">ISTQB</div>
+                  <div className="text-gray-500 text-xs">Advanced Test Mgmt</div>
+                </div>
+              </a>
+
+              {/* University of Toronto - Self-Driving Cars */}
+              <a 
+                href="https://www.coursera.org/account/accomplishments/specialization/68TFF6XMWJAC" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/UofToronto.webp"
+                    alt="University of Toronto"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">University of Toronto</div>
+                  <div className="text-gray-500 text-xs">Self-Driving Cars</div>
+                </div>
+              </a>
+
+              {/* University of Virginia - Digital Product Management */}
+              <a 
+                href="https://www.coursera.org/account/accomplishments/specialization/A9VKMLNNEDU7" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/50"
+              >
+                <div className="w-12 h-12 bg-white rounded-sm border border-gray-200 flex items-center justify-center p-1 flex-shrink-0">
+                  <Image
+                    src="/aguilerapjc-portfolio-site/images/certificates/UnivofVirginia.jpg"
+                    alt="University of Virginia"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-gray-900 font-semibold text-xs sm:text-xs">University of Virginia</div>
+                  <div className="text-gray-500 text-xs">Digital Product Mgmt</div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Featured Projects */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,6 +337,219 @@ export default async function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Professional Certifications</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Continuously developing expertise through industry-recognized certifications
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Google Project Management Certificate */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://www.credly.com/badges/d7fe42c6-982a-4416-99d3-de1548cb7819" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-blue-700 transition-colors"
+                >
+                  GCC
+                </a>
+                <div className="text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Google Project Management Certificate
+              </h4>
+              <p className="text-gray-600 mb-3">Google Career Certificates</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2024
+              </div>
+              <p className="text-sm text-gray-600">
+                Project planning, agile methodologies, risk management, and stakeholder communication in modern project environments.
+              </p>
+            </div>
+
+            {/* SAFe Product Owner/Product Manager */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://www.credly.com/badges/505d3b75-cd9c-48f9-8b1f-5fe0b56b1309" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-green-700 transition-colors"
+                >
+                  SAFe
+                </a>
+                <div className="text-green-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Certified SAFe® 6 Product Owner/Product Manager
+              </h4>
+              <p className="text-gray-600 mb-3">Scaled Agile</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2024 • Valid through: 2025
+              </div>
+              <p className="text-sm text-gray-600">
+                Scaled Agile framework expertise, portfolio alignment, and product strategy in enterprise environments.
+              </p>
+            </div>
+
+            {/* AWS Solutions Architect */}
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://www.credly.com/badges/b92b5a26-84c4-421d-893c-fd23bcdcf6aa" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-orange-700 transition-colors"
+                >
+                  AWS
+                </a>
+                <div className="text-orange-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                AWS Certified Solutions Architect – Associate
+              </h4>
+              <p className="text-gray-600 mb-3">Amazon Web Services</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2024 • Valid through: 2027
+              </div>
+              <p className="text-sm text-gray-600">
+                Cloud architecture design, cost optimization, security best practices, and scalable solutions on AWS.
+              </p>
+            </div>
+
+            {/* ISTQB Test Management */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://atsqa.org/certified-testers/profile/8bdb8b76f83f4bf38e519b9663ac716e" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-purple-700 transition-colors"
+                >
+                  ISTQB
+                </a>
+                <div className="text-purple-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                ISTQB Certified Tester Advanced Level Test Management
+              </h4>
+              <p className="text-gray-600 mb-3">International Software Testing Qualifications Board</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2022
+              </div>
+              <p className="text-sm text-gray-600">
+                Advanced test management, quality assurance strategies, and testing process optimization.
+              </p>
+            </div>
+
+            {/* University of Toronto Self-Driving Cars */}
+            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 border border-red-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://www.coursera.org/account/accomplishments/specialization/68TFF6XMWJAC" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-red-700 transition-colors"
+                >
+                  UoT
+                </a>
+                <div className="text-red-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Self-Driving Cars Specialization
+              </h4>
+              <p className="text-gray-600 mb-3">University of Toronto</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2020
+              </div>
+              <p className="text-sm text-gray-600">
+                Autonomous vehicle technology, computer vision, sensor fusion, and motion planning algorithms.
+              </p>
+            </div>
+
+            {/* University of Virginia Digital Product Management */}
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border border-indigo-200/50 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-start justify-between mb-4">
+                <a 
+                  href="https://www.coursera.org/account/accomplishments/specialization/A9VKMLNNEDU7" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm hover:bg-indigo-700 transition-colors"
+                >
+                  UVA
+                </a>
+                <div className="text-indigo-600 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Digital Product Management
+              </h4>
+              <p className="text-gray-600 mb-3">University of Virginia</p>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                </svg>
+                Issued: 2021
+              </div>
+              <p className="text-sm text-gray-600">
+                Digital strategy, user experience design, data analytics, and product lifecycle management.
+              </p>
+            </div>
+          </div>
+          
+          {/* Verification Notice */}
+          <div className="mt-12 text-center">
+            <p className="text-sm text-gray-500">
+              All certifications can be verified through their respective issuing organizations
+            </p>
           </div>
         </div>
       </section>
