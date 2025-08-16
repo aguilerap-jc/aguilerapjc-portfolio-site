@@ -102,11 +102,6 @@ export async function getAllBlogSlugs(): Promise<string[]> {
     .map((fileName) => fileName.replace(/\.md$/, ''));
 }
 
-export async function getFeaturedPosts(): Promise<BlogPost[]> {
-  const allPosts = await getBlogPosts();
-  return allPosts.filter(post => post.featured);
-}
-
 export async function getCategories(): Promise<string[]> {
   const allPosts = await getBlogPosts();
   return Array.from(new Set(allPosts.map(post => post.category)));
