@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React from 'react';
 import { prof_projects } from '@/data/projects';
 import { getBlogPosts } from '@/data/blog';
 import { ErrorBoundary } from '@/components/ErrorBoundary';

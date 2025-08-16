@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Head from "next/head";
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Experience() {
   const experiences = [
