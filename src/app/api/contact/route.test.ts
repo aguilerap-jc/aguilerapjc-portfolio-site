@@ -33,14 +33,14 @@ describe('/api/contact POST', () => {
     process.env = { ...process.env, ...mockEnv }
     
     // Mock createTransport
-    mockNodemailer.createTransport.mockReturnValue(mockTransporter as any)
+    mockNodemailer.createTransport.mockReturnValue(mockTransporter as unknown as ReturnType<typeof mockNodemailer.createTransport>)
     
     // Mock NextResponse.json to return a proper response-like object
-    mockNextResponse.json.mockImplementation((data, options) => ({
+    mockNextResponse.json.mockImplementation((data: unknown, options?: { status?: number }) => ({
       data,
       options,
       status: options?.status || 200
-    }) as any)
+    }) as unknown as ReturnType<typeof mockNextResponse.json>)
   })
 
   afterEach(() => {
@@ -64,7 +64,7 @@ describe('/api/contact POST', () => {
 
       mockTransporter.sendMail.mockResolvedValue({ messageId: 'test-message-id' })
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(mockRequest.json).toHaveBeenCalled()
       expect(mockNodemailer.createTransport).toHaveBeenCalledWith({
@@ -147,7 +147,7 @@ describe('/api/contact POST', () => {
         json: jest.fn().mockRejectedValue(new Error('Invalid JSON'))
       } as unknown as Request
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(mockNextResponse.json).toHaveBeenCalledWith(
         { error: 'Failed to send email' },
@@ -173,7 +173,7 @@ describe('/api/contact POST', () => {
       // Mock console.error to avoid noise in tests
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(consoleSpy).toHaveBeenCalledWith('Error sending email:', emailError)
       expect(mockNextResponse.json).toHaveBeenCalledWith(
@@ -204,7 +204,7 @@ describe('/api/contact POST', () => {
       // Mock console.error to avoid noise in tests
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(consoleSpy).toHaveBeenCalledWith('Error sending email:', transporterError)
       expect(mockNextResponse.json).toHaveBeenCalledWith(
@@ -262,7 +262,7 @@ describe('/api/contact POST', () => {
         json: jest.fn().mockResolvedValue(requestData)
       } as unknown as Request
 
-      mockNodemailer.createTransport.mockReturnValue(mockTransporter as any)
+      mockNodemailer.createTransport.mockReturnValue(mockTransporter as unknown as ReturnType<typeof mockNodemailer.createTransport>)
       mockTransporter.sendMail.mockResolvedValue({ messageId: 'test-id' })
 
       await POST(mockRequest)
@@ -359,7 +359,7 @@ describe('/api/contact POST', () => {
 
       mockTransporter.sendMail.mockResolvedValue({ messageId: 'test-id' })
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(mockNextResponse.json).toHaveBeenCalledWith(
         { message: 'Email sent successfully' },
@@ -375,7 +375,7 @@ describe('/api/contact POST', () => {
       // Mock console.error to avoid noise in tests
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
 
-      const response = await POST(mockRequest)
+      await POST(mockRequest)
 
       expect(mockNextResponse.json).toHaveBeenCalledWith(
         { error: 'Failed to send email' },

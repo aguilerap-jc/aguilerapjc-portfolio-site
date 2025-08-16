@@ -153,7 +153,7 @@ describe('Blog Data Layer', () => {
         // Tags should include all post tags
         const postTags = [...new Set(posts.flatMap(p => p.tags))]
         expect(tags.sort()).toEqual(postTags.sort())
-      } catch (error) {
+      } catch {
         // If no blog posts exist, functions should still be consistent
         const slugs = await getAllBlogSlugs()
         const categories = await getCategories()

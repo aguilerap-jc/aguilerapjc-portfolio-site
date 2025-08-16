@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { configFile: './babel.jest.config.js' }],
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(remark|remark-parse|remark-html|gray-matter|unified|vfile|unist-util-stringify-position|mdast-util-to-string|micromark|decode-named-character-reference|character-entities)/)'
+    'node_modules/(?!(remark|mdast-util|micromark|unified|vfile|unist-util|character-entities|decode-named-character-reference)/)'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'

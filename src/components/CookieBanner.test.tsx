@@ -5,14 +5,14 @@ import { CookieBanner } from './CookieBanner'
 
 // Mock Next.js Link
 jest.mock('next/link', () => {
-  return function MockLink({ children, href, ...props }: any) {
+  return function MockLink({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) {
     return <a href={href} {...props}>{children}</a>
   }
 })
 
 // Mock gtag function
 const mockGtag = jest.fn()
-;(global as any).gtag = mockGtag
+;(global as { gtag?: jest.Mock }).gtag = mockGtag
 
 // Mock localStorage
 const mockLocalStorage = {
@@ -134,7 +134,7 @@ describe('CookieBanner', () => {
   })
 
   it('updates banner visibility when accepting cookies', () => {
-    const { rerender } = render(<CookieBanner />)
+    render(<CookieBanner />)
     
     // Banner should be visible initially
     expect(screen.getByText(/This site uses cookies to analyze traffic/)).toBeInTheDocument()
@@ -150,7 +150,7 @@ describe('CookieBanner', () => {
   })
 
   it('updates banner visibility when declining cookies', () => {
-    const { rerender } = render(<CookieBanner />)
+    render(<CookieBanner />)
     
     // Banner should be visible initially
     expect(screen.getByText(/This site uses cookies to analyze traffic/)).toBeInTheDocument()
@@ -173,8 +173,9 @@ describe('CookieBanner', () => {
 
   it('handles gtag not being available gracefully', () => {
     // Temporarily remove gtag
-    const originalGtag = (global as any).gtag
-    delete (global as any).gtag
+    const globalWithGtag = global as typeof global & { gtag?: jest.Mock }
+    const originalGtag = globalWithGtag.gtag
+    globalWithGtag.gtag = undefined
     
     render(<CookieBanner />)
     
@@ -188,7 +189,7 @@ describe('CookieBanner', () => {
     }).not.toThrow()
     
     // Restore gtag
-    ;(global as any).gtag = originalGtag
+    globalWithGtag.gtag = originalGtag
   })
 
   it('contains cookie emoji and descriptive text', () => {
