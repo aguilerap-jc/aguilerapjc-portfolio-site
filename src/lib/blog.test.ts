@@ -79,7 +79,7 @@ This is another test post.
 
   describe('getBlogPosts', () => {
     it('should return all blog posts when markdown files exist', async () => {
-      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as any);
+      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as unknown as fs.Dirent[]);
       mockFs.readFileSync
         .mockReturnValueOnce(mockMarkdownContent)
         .mockReturnValueOnce(mockMarkdownContent2);
@@ -97,7 +97,7 @@ This is another test post.
     });
 
     it('should return empty array when no markdown files exist', async () => {
-      mockFs.readdirSync.mockReturnValue([] as any);
+      mockFs.readdirSync.mockReturnValue([] as unknown as fs.Dirent[]);
 
       const posts = await getBlogPosts();
 
@@ -105,7 +105,7 @@ This is another test post.
     });
 
     it('should filter out non-markdown files', async () => {
-      mockFs.readdirSync.mockReturnValue(['test-post.md', 'readme.txt', 'another-post.md'] as any);
+      mockFs.readdirSync.mockReturnValue(['test-post.md', 'readme.txt', 'another-post.md'] as unknown as fs.Dirent[]);
       mockFs.readFileSync
         .mockReturnValueOnce(mockMarkdownContent)
         .mockReturnValueOnce(mockMarkdownContent2);
@@ -142,7 +142,7 @@ This is another test post.
 
   describe('getAllBlogSlugs', () => {
     it('should return array of slugs from markdown files', async () => {
-      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md', 'readme.txt'] as any);
+      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md', 'readme.txt'] as unknown as fs.Dirent[]);
 
       const slugs = await getAllBlogSlugs();
 
@@ -153,7 +153,7 @@ This is another test post.
     });
 
     it('should return empty array when no markdown files exist', async () => {
-      mockFs.readdirSync.mockReturnValue([] as any);
+      mockFs.readdirSync.mockReturnValue([] as unknown as fs.Dirent[]);
 
       const slugs = await getAllBlogSlugs();
 
@@ -163,7 +163,7 @@ This is another test post.
 
   describe('getCategories', () => {
     it('should return unique categories from all posts', async () => {
-      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as any);
+      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as unknown as fs.Dirent[]);
       mockFs.readFileSync
         .mockReturnValueOnce(mockMarkdownContent)
         .mockReturnValueOnce(mockMarkdownContent2);
@@ -176,7 +176,7 @@ This is another test post.
     });
 
     it('should return empty array when no posts exist', async () => {
-      mockFs.readdirSync.mockReturnValue([] as any);
+      mockFs.readdirSync.mockReturnValue([] as unknown as fs.Dirent[]);
 
       const categories = await getCategories();
 
@@ -186,7 +186,7 @@ This is another test post.
 
   describe('getTags', () => {
     it('should return unique tags from all posts', async () => {
-      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as any);
+      mockFs.readdirSync.mockReturnValue(['test-post.md', 'another-post.md'] as unknown as fs.Dirent[]);
       mockFs.readFileSync
         .mockReturnValueOnce(mockMarkdownContent)
         .mockReturnValueOnce(mockMarkdownContent2);
@@ -201,7 +201,7 @@ This is another test post.
     });
 
     it('should return empty array when no posts exist', async () => {
-      mockFs.readdirSync.mockReturnValue([] as any);
+      mockFs.readdirSync.mockReturnValue([] as unknown as fs.Dirent[]);
 
       const tags = await getTags();
 
