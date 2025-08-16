@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 import { prof_projects } from '@/data/projects';
-import { getFeaturedPosts } from '@/data/blog';
+import { getBlogPosts } from '@/data/blog';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default async function Home() {
-  const featuredPosts = await getFeaturedPosts();
+  const allPosts = await getBlogPosts();
+  const recentPosts = allPosts.slice(0, 3); // Get the 3 most recent posts
   
   return (
     <ErrorBoundary>
@@ -271,74 +272,70 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Blog Posts Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Latest Insights</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Thoughts on product management, digital transformation, and technology leadership
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredPosts.slice(0, 3).map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      {post.category}
-                    </span>
-                    <span className="text-sm text-gray-500 flex items-center">
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                      {post.readTime} min read
-                    </span>
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-blue-600 transition-colors duration-200">
-                      {post.title}
-                    </Link>
-                  </h4>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.author}</span>
-                    <time dateTime={post.publishedAt}>
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric'
-                      })}
-                    </time>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/blog"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
-            >
-              View All Articles
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+      {/* Latest Insights - Minimal Preview */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">Latest Insights</h3>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Thoughts on autonomous vehicles, product strategy, and mobility innovation
+          </p>
         </div>
+        
+        {recentPosts && recentPosts.length > 0 ? (
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {recentPosts.slice(0, 3).map((post) => (
+                <article key={post.id} className="group">
+                  <Link href={`/aguilerapjc-portfolio-site/blog/${post.slug}`} className="block">
+                    <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all duration-200">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-1">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            {post.category}
+                          </span>
+                          <time className="text-xs text-gray-500" dateTime={post.publishedAt}>
+                            {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric'
+                            })}
+                          </time>
+                        </div>
+                        <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {post.title}
+                        </h4>
+                      </div>
+                      <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <Link
+                href="/aguilerapjc-portfolio-site/blog"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+              >
+                View All Articles
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <p className="text-gray-500 text-sm">New insights coming soon</p>
+          </div>
+        )}
       </section>
 
       {/* Core Competencies Section */}
