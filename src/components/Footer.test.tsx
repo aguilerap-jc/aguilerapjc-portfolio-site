@@ -21,6 +21,11 @@ describe('Footer Component', () => {
       expect(screen.getByText(/passionate Product Manager with expertise in Autonomous Vehicles/)).toBeInTheDocument();
     });
 
+    it('has About section with correct column span for larger screens', () => {
+      const aboutSection = screen.getByText('About').closest('div');
+      expect(aboutSection).toHaveClass('md:col-span-2');
+    });
+
     it('renders the Quick Links section', () => {
       expect(screen.getByText('Quick Links')).toBeInTheDocument();
       
@@ -100,7 +105,7 @@ describe('Footer Component', () => {
     it('has responsive grid layout classes', () => {
       const footer = screen.getByRole('contentinfo');
       const gridContainer = footer.querySelector('.grid');
-      expect(gridContainer).toHaveClass('grid-cols-1', 'md:grid-cols-3');
+      expect(gridContainer).toHaveClass('grid-cols-1', 'md:grid-cols-4');
     });
 
     it('has proper container and spacing classes', () => {
