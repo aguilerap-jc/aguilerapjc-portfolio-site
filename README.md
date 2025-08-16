@@ -27,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## 🛠️ Tech Stack
 
-- **Next.js 14** (App Router) with Turbopack
+- **Next.js 15** (App Router) with Turbopack
 - **TypeScript** for type safety
 - **Tailwind CSS** for styling
 - **Markdown** for blog content
