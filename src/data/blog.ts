@@ -4,7 +4,6 @@ export {
   getBlogPosts,
   getBlogPost,
   getAllBlogSlugs,
-  getFeaturedPosts,
   getCategories,
   getTags
 } from '@/lib/blog';
