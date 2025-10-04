@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import { PDFViewer } from '@/components/PDFViewer';
 
 interface PresentationViewerProps {
@@ -7,6 +8,8 @@ interface PresentationViewerProps {
     title: string;
     slideDeckUrl?: string;
     allowDownload?: boolean;
+    image?: string;
+    videoUrl?: string;
   };
 }
 
@@ -22,21 +25,39 @@ export default function PresentationViewer({ presentation }: PresentationViewerP
   }
 
   return (
-    <div className="bg-gray-100 rounded-lg p-8 text-center">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        📄 Presentation Preview
-      </h3>
-      <p className="text-gray-600 mb-6">
-        Click below to view the presentation slides
-      </p>
+    <div className="flex flex-col items-center space-y-8">
+      {/* Thumbnail Image */}
+      {presentation.image && (
+        <div className="w-full max-w-2xl bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative aspect-video">
+            <Image
+              src={presentation.image}
+              alt={`${presentation.title} thumbnail`}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      )}
       
-      <div className="inline-block">
+      {/* Presentation Actions */}
+      <div className="flex gap-4 justify-center">
         <PDFViewer
           pdfUrl={presentation.slideDeckUrl}
           title={presentation.title}
           allowDownload={presentation.allowDownload ?? true}
           presentationId={presentation.id}
         />
+        {presentation.videoUrl && (
+          <a
+            href={presentation.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-gray-900 text-gray-900 text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 hover:text-white transition-colors"
+          >
+            🎥 Watch Video
+          </a>
+        )}
       </div>
     </div>
   );
@@ -44,11 +65,15 @@ export default function PresentationViewer({ presentation }: PresentationViewerP
 
 // Component for sharing the link
 export function ShareLinkButton({ presentationId }: { presentationId: string }) {
-  const shareUrl = typeof window !== 'undefined' 
-    ? `${window.location.origin}/presentation/${presentationId}`
-    : `/presentation/${presentationId}`;
+  const getShareUrl = () => {
+    if (typeof window !== 'undefined') {
+      return `${window.location.origin}${window.location.pathname}`;
+    }
+    return `/presentation/${presentationId}`;
+  };
 
   const copyToClipboard = async () => {
+    const shareUrl = getShareUrl();
     try {
       await navigator.clipboard.writeText(shareUrl);
       alert('Link copied to clipboard!');
@@ -67,9 +92,9 @@ export function ShareLinkButton({ presentationId }: { presentationId: string }) 
   return (
     <button
       onClick={copyToClipboard}
-      className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+      className="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer flex items-center gap-2 transition-colors justify-start w-full"
     >
-      📋 Copy Link
+      📋 Share this presentation
     </button>
   );
 }

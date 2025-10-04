@@ -1,6 +1,7 @@
 import { presentations, getPresentationById } from '@/data/presentations';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import PresentationViewer, { ShareLinkButton } from './PresentationViewer';
 
 interface PresentationPreviewPageProps {
   params: Promise<{
@@ -65,42 +66,14 @@ export default async function PresentationPreviewPage({ params }: PresentationPr
             )}
           </div>
 
-          {/* PDF Viewer */}
+          {/* Presentation Preview */}
           <div className="p-6">
-            <div className="bg-gray-100 rounded-lg p-8 text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                📄 Presentation Preview
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Presentation ID: {presentation.id}
-              </p>
-              <p className="text-sm text-gray-500">
-                PDF URL: {presentation.slideDeckUrl}
-              </p>
-              {presentation.slideDeckUrl && (
-                <a
-                  href={presentation.slideDeckUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-                >
-                  📄 View PDF
-                </a>
-              )}
-            </div>
+            <PresentationViewer presentation={presentation} />
           </div>
 
           {/* Share Link Section */}
           <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Share this presentation</h3>
-                <p className="text-xs text-gray-500">Direct link to this presentation preview</p>
-              </div>
-              <div className="text-sm text-gray-600">
-                URL: /presentation/{presentation.id}
-              </div>
-            </div>
+            <ShareLinkButton presentationId={presentation.id} />
           </div>
         </div>
       </div>
