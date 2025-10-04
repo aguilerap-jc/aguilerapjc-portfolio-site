@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Head from "next/head";
 import React, { useState } from 'react';
+import { presentations } from '@/data/presentations';
 
 export default function Experience() {
   const experiences = [
@@ -359,6 +360,110 @@ export default function Experience() {
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Speaking & Presentations Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Speaking & Presentations</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Sharing insights on autonomous vehicles, product management, and mobility innovation
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {presentations.map((presentation) => (
+                <div
+                  key={presentation.id}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                >
+                  {presentation.image && (
+                    <div className="relative h-48">
+                      <Image
+                        src={presentation.image}
+                        alt={presentation.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-white text-gray-900 px-3 py-1 rounded-full text-xs font-medium shadow">
+                          {presentation.type.charAt(0).toUpperCase() + presentation.type.slice(1)}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="p-6">
+                    <div className="mb-3">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{presentation.title}</h3>
+                      <div className="text-sm text-gray-600 mb-2">
+                        <span className="font-medium">{presentation.event}</span>
+                        <span className="mx-2">•</span>
+                        <span>{new Date(presentation.date).toLocaleDateString('en-US', { 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        })}</span>
+                      </div>
+                      <div className="text-sm text-gray-500 mb-3">
+                        📍 {presentation.location}
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-600 text-sm mb-4">{presentation.description}</p>
+                    
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {presentation.topics.slice(0, 3).map((topic, index) => (
+                          <span
+                            key={index}
+                            className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                        {presentation.topics.length > 3 && (
+                          <span className="text-gray-500 text-xs">
+                            +{presentation.topics.length - 3} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      {presentation.slideDeckUrl && (
+                        <a
+                          href={presentation.slideDeckUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-gray-900 text-white text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                        >
+                          📄 View Slides
+                        </a>
+                      )}
+                      {presentation.videoUrl && (
+                        <a
+                          href={presentation.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 border-2 border-gray-900 text-gray-900 text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 hover:text-white transition-colors"
+                        >
+                          🎥 Watch
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {presentations.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500">More presentations coming soon...</p>
+              </div>
+            )}
           </div>
         </section>
       </div>
