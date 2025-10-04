@@ -43,7 +43,8 @@ Edit `src/data/presentations.ts` and add your presentation to the array:
   videoUrl: 'https://youtube.com/watch?v=your-video', // Optional
   image: '/aguilerapjc-portfolio-site/images/presentations/your-thumb.jpg',
   audience: 'Target audience description',
-  type: 'conference' // Options: 'conference', 'workshop', 'webinar', 'internal', 'meetup'
+  type: 'conference', // Options: 'conference', 'workshop', 'webinar', 'internal', 'meetup'
+  allowDownload: true // Optional: Set to false to prevent downloads (view-only mode)
 }
 ```
 
@@ -73,6 +74,29 @@ Add `videoUrl` if you have a recording of the presentation.
 
 ### Custom Thumbnails
 If no thumbnail is provided, the presentation will display without an image header.
+
+### Download Control
+Use the `allowDownload` parameter to control how users can access your presentations:
+
+- **`allowDownload: true`** (default): Users can view and download the PDF
+- **`allowDownload: false`**: Users can only view the PDF in a modal overlay - downloads are disabled
+
+**View-Only Mode Features:**
+- PDF opens in a custom modal viewer
+- Right-click context menu is disabled
+- Downloads are prevented
+- Shows "👁️ View Only" button instead of "📄 View Slides"
+- Displays helpful tooltip explaining view-only restriction
+
+**Example:**
+```typescript
+{
+  id: 'confidential-presentation',
+  title: 'Internal Strategy Presentation',
+  // ... other properties
+  allowDownload: false // Enables view-only mode
+}
+```
 
 ## Display Location
 

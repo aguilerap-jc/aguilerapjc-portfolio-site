@@ -13,6 +13,11 @@ describe('Presentations Data', () => {
       expect(presentation).toHaveProperty('audience');
       expect(presentation).toHaveProperty('type');
       expect(Array.isArray(presentation.topics)).toBe(true);
+      
+      // allowDownload is optional, but if present should be boolean
+      if (presentation.allowDownload !== undefined) {
+        expect(typeof presentation.allowDownload).toBe('boolean');
+      }
     });
   });
 

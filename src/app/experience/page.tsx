@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Head from "next/head";
 import React, { useState } from 'react';
 import { presentations } from '@/data/presentations';
+import { PDFViewer } from '@/components/PDFViewer';
 
 export default function Experience() {
   const experiences = [
@@ -434,14 +435,11 @@ export default function Experience() {
                     
                     <div className="flex gap-2">
                       {presentation.slideDeckUrl && (
-                        <a
-                          href={presentation.slideDeckUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 bg-gray-900 text-white text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-                        >
-                          📄 View Slides
-                        </a>
+                        <PDFViewer
+                          pdfUrl={presentation.slideDeckUrl}
+                          title={presentation.title}
+                          allowDownload={presentation.allowDownload}
+                        />
                       )}
                       {presentation.videoUrl && (
                         <a

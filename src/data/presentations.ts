@@ -11,6 +11,7 @@ export interface Presentation {
   image?: string;
   audience: string;
   type: 'conference' | 'workshop' | 'webinar' | 'internal' | 'meetup';
+  allowDownload?: boolean; // If false, users can view but not download the PDF
 }
 
 export const presentations: Presentation[] = [
@@ -26,9 +27,9 @@ export const presentations: Presentation[] = [
     //videoUrl: 'https://youtube.com/watch?v=example',
     image: '/aguilerapjc-portfolio-site/images/presentations/JCAP_Thumbnail_LDM_RedefiningMobility_Kellogg_MBA_Sep_2025.jpg',
     audience: 'MBA Students, Industry Professionals',
-    type: 'webinar'
+    type: 'webinar',
+    allowDownload: false // Set to false to prevent downloads
   },
-  
   // Add more presentations as needed
 ];
 
