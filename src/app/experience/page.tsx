@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Head from "next/head";
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { presentations } from '@/data/presentations';
 import { PDFViewer } from '@/components/PDFViewer';
@@ -378,8 +379,22 @@ export default function Experience() {
               {presentations.map((presentation) => (
                 <div
                   key={presentation.id}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 relative group hover:scale-105 hover:-translate-y-1"
                 >
+                  {/* Clickable overlay for the entire card */}
+                  <Link
+                    href={`/presentation/${presentation.id}`}
+                    className="absolute inset-0 z-10"
+                    aria-label={`View ${presentation.title} presentation`}
+                  />
+                  
+                  {/* Click indicator */}
+                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-90 transition-all duration-300 z-10 pointer-events-none">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                      View Details →
+                    </div>
+                  </div>
+                  
                   {presentation.image && (
                     <div className="relative h-48">
                       <Image
@@ -433,7 +448,7 @@ export default function Experience() {
                       </div>
                     </div>
                     
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 relative z-20">
                       {presentation.slideDeckUrl && (
                         <PDFViewer
                           pdfUrl={presentation.slideDeckUrl}
@@ -447,7 +462,7 @@ export default function Experience() {
                           href={presentation.videoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 border-2 border-gray-900 text-gray-900 text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 hover:text-white transition-colors"
+                          className="flex-1 border-2 border-gray-900 text-gray-900 text-center px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 hover:text-white transition-colors relative z-20"
                         >
                           🎥 Watch
                         </a>
