@@ -73,7 +73,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
         style: { userSelect: 'none' as const }
       })}
     >
-      {allowDownload ? '📄 View Slides' : '📄 View Slides'}
+      {allowDownload ? '📄 View Slides' : '�️ View Only'}
     </a>
   );
 };

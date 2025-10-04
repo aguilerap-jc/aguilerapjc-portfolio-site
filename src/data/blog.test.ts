@@ -1,3 +1,9 @@
+// Mock the blog module to avoid ES module issues during testing
+jest.mock('../lib/blog', () => ({
+  getBlogPostBySlug: jest.fn(),
+  getAllBlogPosts: jest.fn(() => []),
+}));
+
 import {
   getBlogPosts,
   getBlogPost,

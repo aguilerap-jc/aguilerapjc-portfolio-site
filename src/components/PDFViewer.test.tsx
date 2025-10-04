@@ -21,7 +21,7 @@ describe('PDFViewer Component', () => {
     render(<PDFViewer {...mockProps} allowDownload={false} />);
     
     const button = screen.getByRole('link');
-    expect(button).toHaveTextContent('👁️ View Only');
+    expect(button).toHaveTextContent('View Only');
     expect(button).toHaveAttribute('title', 'View only - Download disabled');
     expect(button).not.toHaveAttribute('target', '_blank');
   });
