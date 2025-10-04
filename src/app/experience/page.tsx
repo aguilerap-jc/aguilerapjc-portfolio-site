@@ -439,6 +439,7 @@ export default function Experience() {
                           pdfUrl={presentation.slideDeckUrl}
                           title={presentation.title}
                           allowDownload={presentation.allowDownload}
+                          presentationId={presentation.id}
                         />
                       )}
                       {presentation.videoUrl && (

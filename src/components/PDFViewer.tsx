@@ -4,12 +4,14 @@ interface PDFViewerProps {
   pdfUrl: string;
   title: string;
   allowDownload?: boolean;
+  presentationId?: string; // Optional: for generating shareable links
 }
 
 export const PDFViewer: React.FC<PDFViewerProps> = ({ 
   pdfUrl, 
   title, 
-  allowDownload = true 
+  allowDownload = true,
+  presentationId
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [zoom, setZoom] = React.useState(75); // Default to 75% for better fit
@@ -86,9 +88,14 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
           </div>
           <div className="p-4 border-t bg-gray-50 text-center">
             <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-600">
-                📄 Preview
-              </p>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-gray-600">
+                  📄 Preview
+                </p>
+                {presentationId && (
+                  <SharePresentationButton presentationId={presentationId} />
+                )}
+              </div>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span>Quick zoom:</span>
                 {[50, 75, 100, 125, 150].map((zoomLevel) => (
@@ -129,3 +136,37 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
     </a>
   );
 };
+
+// Component for sharing presentation links
+function SharePresentationButton({ presentationId }: { presentationId: string }) {
+  const copyShareLink = async () => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/aguilerapjc-portfolio-site' : '';
+    const shareUrl = typeof window !== 'undefined' 
+      ? `${window.location.origin}${basePath}/presentation/${presentationId}`
+      : `${basePath}/presentation/${presentationId}`;
+    
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      alert('📋 Share link copied to clipboard!');
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = shareUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('📋 Share link copied to clipboard!');
+    }
+  };
+
+  return (
+    <button
+      onClick={copyShareLink}
+      className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
+      title="Copy shareable link"
+    >
+      🔗 Share
+    </button>
+  );
+}
