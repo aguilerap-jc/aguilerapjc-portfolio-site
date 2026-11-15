@@ -1,7 +1,11 @@
-// Mock the blog module to avoid ES module issues during testing
+// Keep this suite focused on the data-layer re-export contract. The underlying
+// filesystem and Markdown behavior is covered by src/lib/blog.test.ts.
 jest.mock('../lib/blog', () => ({
-  getBlogPostBySlug: jest.fn(),
-  getAllBlogPosts: jest.fn(() => []),
+  getBlogPosts: jest.fn().mockResolvedValue([]),
+  getBlogPost: jest.fn().mockResolvedValue(null),
+  getAllBlogSlugs: jest.fn().mockResolvedValue([]),
+  getCategories: jest.fn().mockResolvedValue([]),
+  getTags: jest.fn().mockResolvedValue([]),
 }));
 
 import {
@@ -12,6 +16,7 @@ import {
   getTags,
   BlogPost
 } from './blog'
+import * as blogLib from '../lib/blog'
 
 describe('Blog Data Layer', () => {
   describe('Blog Data Exports', () => {
@@ -48,13 +53,12 @@ describe('Blog Data Layer', () => {
       expect(mockPost.id).toBe('test')
     })
 
-    it('re-exports functions from lib/blog correctly', async () => {
-      // These functions should be callable and return appropriate types
-      expect(getBlogPosts).toBeInstanceOf(Function)
-      expect(getBlogPost).toBeInstanceOf(Function)
-      expect(getAllBlogSlugs).toBeInstanceOf(Function)
-      expect(getCategories).toBeInstanceOf(Function)
-      expect(getTags).toBeInstanceOf(Function)
+    it('re-exports functions from lib/blog correctly', () => {
+      expect(getBlogPosts).toBe(blogLib.getBlogPosts)
+      expect(getBlogPost).toBe(blogLib.getBlogPost)
+      expect(getAllBlogSlugs).toBe(blogLib.getAllBlogSlugs)
+      expect(getCategories).toBe(blogLib.getCategories)
+      expect(getTags).toBe(blogLib.getTags)
     })
   })
 
