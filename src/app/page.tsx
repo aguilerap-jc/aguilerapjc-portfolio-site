@@ -37,7 +37,7 @@ export default async function Home() {
   </span>
     </h2>
     <p className="text-lg text-gray-700 mb-4 max-w-lg">
-      Passionate about building innovative mobility solutions. With 6+ years of experience in the automotive and technology industries, I specialize in autonomous vehicles, mobility, and remote operations.
+      Product leader with 8+ years across autonomous mobility and technology. I work at the intersection of vehicle integration, fleet operations, and product strategy, turning complex cross-functional challenges into clear product direction and scalable mobility outcomes.
     </p>
     <ul className="list-disc list-inside text-gray-500 mb-6 max-w-lg space-y-1">
       <li>Technical excellence & creative problem-solving</li>

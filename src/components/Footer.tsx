@@ -9,8 +9,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <p className="text-gray-300">
-              I am a passionate Product Manager with expertise in Autonomous Vehicles and Mobility. With 6+ years of experience in the Automotive and Technology industries, I specialize in autonomois vehicles, mobility and remote operatios.
-              My approach combines technical excellence with creative problem-solving, delivering innovative solutions that make a real impact.
+              Product leader with 8+ years across autonomous mobility and technology. I work at the intersection of vehicle integration, fleet operations, and product strategy, aligning cross-functional teams and stakeholders around scalable mobility outcomes.
             </p>
           </div>
           
