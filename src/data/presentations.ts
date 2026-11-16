@@ -16,6 +16,19 @@ export interface Presentation {
 
 export const presentations: Presentation[] = [
   {
+    id: 'av-workforce-transformation-meetup-2026',
+    title: 'The Hidden Workforce Behind Autonomous Mobility',
+    event: 'Autonomous Driving Meetup Hamburg',
+    date: '2026-05-28',
+    location: 'Hamburg, Germany',
+    description: 'How remote assistance, hub operations, and field operations are creating a new autonomous-mobility workforce.',
+    topics: ['Autonomous Vehicles', 'Fleet Operations', 'Remote Assistance', 'Future of Work'],
+    slideDeckUrl: '/aguilerapjc-portfolio-site/presentations/av-workforce-transformation-meetup-2026.pdf',
+    image: '/aguilerapjc-portfolio-site/images/presentations/av-workforce-transformation-meetup-2026-thumb.jpg',
+    audience: 'Autonomous-mobility professionals and enthusiasts, approximately 30 attendees',
+    type: 'meetup'
+  },
+  {
     id: 'ModularArch_LDM',
     title: 'Road Ahead: Why Large Driving Models are Redifining Mobility',
     event: 'Kellogg MBA 2025',
